@@ -32,16 +32,16 @@ class ControllerModelGenerator extends CI_Controller {
         public function save(){
 
         }
-        public function show(@$id){
+        public function show(\$id){
 
         }
-        public function edit(@$id){
+        public function edit(\$id){
 
         }
         public function update(){
 
         }
-        public function destroy(){
+        public function destroy(\$id){
 
         }
     }";
