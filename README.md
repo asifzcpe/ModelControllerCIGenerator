@@ -12,7 +12,7 @@ Note:model generation not aded yet
   
   That's it. A controller of your given name has been created on your controller folder
   
-  Note#1: This only work on MVC not on HMVC but Features for HMVC will be added soon as well as for creating model.
+  Note#1: This only works on MVC not on HMVC but Features for HMVC will be added soon as well as for creating model.
   <br>
   Note#2: If you are using any ACL technique, please register Tools controller to your ACL.
   
