@@ -8,7 +8,7 @@ Note:model generation not aded yet
 
 3. run the following code on cmd:
 
-  php index.php Tools API "your controller name"
+  <code>php index.php Tools API "your controller name"<code>
   
   That's it. A controller of your given name has been created on your controller folder
   
