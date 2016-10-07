@@ -1,4 +1,6 @@
 <?php
+ob_start();
+error_reporting(0);
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Tools extends CI_Controller {
 /**
@@ -8,9 +10,9 @@ class Tools extends CI_Controller {
   * For more information go https://github.com/asifzcpe/ModelControllerCIGenerator
   * ------------------------------------------------------------------------------
   */
-public function api($name){
+	public function api($name){
     	$this->make_controller_file($name);
-}
+	}
   public function make_controller_file($name){
   	$controller_name=ucfirst($name)."Controller.php";
   	$controller_class=ucfirst($name)."Controller";
@@ -95,3 +97,4 @@ public function api($name){
     echo "$path controller has been created successfully".PHP_EOL;
   }
 }
+ob_flush();
