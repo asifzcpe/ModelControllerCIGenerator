@@ -1,51 +1,95 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class ControllerModelGenerator extends CI_Controller {
-
+class Tools extends CI_Controller {
 /**
   * This controller is used to generate codeigniter controller
   * and model using command line
   * ------------------------------------------------------------------------------
   * For more information go https://github.com/asifzcpe/ModelControllerCIGenerator
   * ------------------------------------------------------------------------------
-	*/
-	public function controller($name){
-    $this->make_controller_file($name);
-	}
-
+  */
+public function api($name){
+    	$this->make_controller_file($name);
+}
   public function make_controller_file($name){
-    $path=APPPATH."controllers/$name.php";
-    $make_controller=fopen($path,"w") or die('unable to create '.$name.php.' controller');
+  	$controller_name=ucfirst($name)."Controller.php";
+  	$controller_class=ucfirst($name)."Controller";
+    $path=APPPATH."controllers/$controller_name";
+    $make_controller=fopen($path,"w") or die('unable to create '.$controller_name.' controller');
     $controller_template="<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
-
-    class $name extends CI_Controller {
+    class $controller_class extends CI_Controller {
         public function __construct() {
             parent::__construct();
         }
-        public function index(){
+    /**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index(){
+		//
+	}
 
-        }
-        public function create(){
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create(){
+		//
+		
+	}
 
-        }
-        public function save(){
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store(){
+		//	
+	}
 
-        }
-        public function show(\$id){
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  \$id
+	 * @return Response
+	 */
+	public function show(\$id){
+		//
+	}
 
-        }
-        public function edit(\$id){
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  \$id
+	 * @return Response
+	 */
+	public function edit(\$id){
+		//
+	}
 
-        }
-        public function update(){
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  \$id
+	 * @return Response
+	 */
+	public function update(\$id){
+		//
+	}
 
-        }
-        public function destroy(\$id){
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  \$id
+	 * @return Response
+	 */
+	public function destroy(\$id){
+		//
+	}
 
-        }
     }";
-
     fwrite($make_controller,$controller_template);
     fclose($make_controller);
     echo "$path controller has been created successfully".PHP_EOL;
