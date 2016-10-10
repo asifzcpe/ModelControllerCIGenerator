@@ -10,7 +10,11 @@ Note:model generation not aded yet
 
   <code>php index.php tools api "your controller name"<code>
   
-  That's it. A controller of your given name has been created on your controller folder
+  That's it. A controller and a model of your given name have been created on your controller folder and model folder respectively
+  
+  For example: I write the following controller:
+  <code>php index.php tools api "User"</code>
+  It will create a controller name UserController.php and a model User.php 
   
   Note#1: This only works on MVC not on HMVC but Features for HMVC will be added soon as well as for creating model.
   <br>
