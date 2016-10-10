@@ -12,6 +12,7 @@ class Tools extends CI_Controller {
   */
 	public function api($name){
     	$this->make_controller_file($name);
+			$this->make_model_file($name);
 	}
   public function make_controller_file($name){
   	$controller_name=ucfirst($name)."Controller.php";
@@ -39,7 +40,7 @@ class Tools extends CI_Controller {
 	 */
 	public function create(){
 		//
-		
+
 	}
 
 	/**
@@ -48,7 +49,7 @@ class Tools extends CI_Controller {
 	 * @return Response
 	 */
 	public function store(){
-		//	
+		//
 	}
 
 	/**
@@ -96,5 +97,22 @@ class Tools extends CI_Controller {
     fclose($make_controller);
     echo "$path controller has been created successfully".PHP_EOL;
   }
+
+	public function make_model_file($name){
+		$model_name=ucfirst($name).".php";
+  	$controller_class=ucfirst($name);
+    $path=APPPATH."models/$model_name";
+    $make_model=fopen($path,"w") or die('unable to create '.$model_name.' model');
+    $model_template="<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
+    class ".ucfirst($name)." extends CI_Model {
+        public function __construct() {
+            parent::__construct();
+        }
+
+    }";
+    fwrite($make_model,$model_template);
+    fclose($make_model);
+    echo "$path model has been created successfully".PHP_EOL;
+	}
 }
 ob_flush();
