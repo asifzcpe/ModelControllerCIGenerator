@@ -1,5 +1,6 @@
 # ModelControllerCIGenerator
 this can be used to create model and controller with predefined model and controller template using CLI like in laravel
+Note: This can not be used in HMVC struture.......
 
 # How to use the controller 
 1. Download or clone the Tools.php file and keep it into your base controller folder 
